@@ -29,6 +29,6 @@ Componente para ilustrar el uso de **vfg-check-list**.
 ## Enlaces
 - [Tutorial para desplegar aplicaciones Angular en GitHup Pages](https://alligator.io/angular/deploying-angular-app-github-pages/ "alligator.io").
 
-   Con algunas versiones de AngularCli el comando `$ ng build --prod` retorna un error por cada campo privado que tengamos declarado. Para evitarlo basta con reemplazar `--prod` por `--evm=prod`.   
+   Con algunas versiones de AngularCli el comando `$ ng build --prod` retorna un error por cada campo privado que tengamos declarado. Para evitarlo basta con reemplazar `--prod` por `--env=prod`.   
 
 
