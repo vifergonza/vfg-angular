@@ -1,8 +1,0 @@
-<form [formGroup]="checkForm">
-  <div class="form-group">
-    <div class="custom-control custom-checkbox" *ngFor="let item of checks.controls; let i=index">
-      <input type="checkbox" class="custom-control-input" id="{{label+i}}" [formControl]="item">
-      <label class="custom-control-label" for="{{label+i}}"> {{getPropertie(i)}} </label>
-    </div>
-  </div>
-</form>
