@@ -1,3 +1,6 @@
+[logo]: https://raw.githubusercontent.com/vifergonza/vfg-angular/master/src/assets/angular-vfg.png
+ ![alt text][logo]
+
 # VfgAngular
 
 Esta es un simple aplicación para desarrollar probar y experimentar con Angular, Bootstrap y todas las técnologias web con las que voy practicando.
