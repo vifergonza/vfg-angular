@@ -30,8 +30,6 @@ export class VfgCheckListComponent implements OnInit {
 
   			this.update.emit(temp);
   		});
-
-  		console.log('ngOnInit', this.list, this.label);
   	}
 
   	private buildFormItems(): FormArray {

@@ -1,17 +1,14 @@
 <div class="container-fluid mt-3">
-<div class="alert alert-light" role="alert">
-  A continuación vemos el resultado de aplicar dos listas diferentes, con objetos con estructuras diferentes al componente <strong>vfg-check-list</strong>.
-</div>
+  <div class="alert alert-light" role="alert">
+    A continuación vemos el resultado de aplicar dos listas diferentes, con objetos con estructuras diferentes al componente <strong>vfg-check-list</strong>.
+  </div>
   <div class="row">
-
     <div class="col-sm-6 ">
       <div class="card">
         <h5 class="card-header">Lista de grupos</h5>
         <div class="card-body">
           <h5 class="card-title">Seleccione alguno de estos grupos / solistas:</h5>
-    
           <vfg-check-list [list]="grupos" [label]="label" (update)="updateUno($event)"></vfg-check-list>
-    
           <blockquote class="blockquote mb-0">
             <footer class="blockquote-footer">Grupos seleccionados:
               <cite title="Source Title">{{ selectedUno | json}}</cite>
@@ -20,15 +17,12 @@
         </div>
       </div>
     </div>
-
     <div class="col-sm-6 ">
       <div class="card">
         <h5 class="card-header">Lista de discos</h5>
         <div class="card-body">
           <h5 class="card-title">Seleccione alguno de estos discos:</h5>
-    
           <vfg-check-list [list]="discos" [label]="otralabel" (update)="updateDos($event)"></vfg-check-list>
-    
           <blockquote class="blockquote mb-0">
             <footer class="blockquote-footer">Discos seleccionados:
               <cite title="Source Title">{{ selectedDos | json}}</cite>
@@ -37,6 +31,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>

@@ -1,0 +1,38 @@
+<div class="container-fluid mt-1">
+  <div class="row">
+    <div class="col-sm-2 px-0 ">
+      <p class="m-0"> {{ reserva.inicio }} - {{ reserva.fin }}</p>
+    </div>
+    <div class="col-sm-9 px-0">
+      <ul class="list-inline my-0">
+        <li class="list-inline-item">
+          <span class="badge badge-success ml-0">{{reserva.estado | uppercase}}</span>
+        </li>
+        <li class="list-inline-item" *ngFor="let item of reserva.deportes">
+          <span><i class="material-icons">bookmark_border</i> {{ item.nombre }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-1 px-0">
+      <button type="button" class="btn btn-link btn-sm" 
+      (click)="instalacionesCollapsed = !instalacionesCollapsed" [attr.aria-expanded]="!instalacionesCollapsed" 
+      data-toggle="tooltip" data-placement="top"
+      title="{{instalacionesCollapsed ? 'Ver módulos' : 'Ocultar módulos'}}"
+      aria-controls="collapseExample">
+        <i class="material-icons"> {{ instalacionesCollapsed ? 'visibility' : 'visibility_off'  }} </i>
+      </button>
+    </div>
+  </div>
+  <div class="row mb-3" id="collapseExample" [ngbCollapse]="instalacionesCollapsed">
+    <div class="col-sm-10 offset-sm-2">
+      <div class="row border bg-modulo" *ngFor="let item of reserva.modulos; let last=last" 
+      [ngClass]="{'border-bottom-0': (!last)}" >
+        <div class="col-sm-4">
+         {{ item.instalacion}} </div>  
+        <div class="col-sm-2" ngbPopover="{{item.descripcion}}" popoverTitle="{{item.modulo}}" triggers="mouseenter:mouseleave" placement="top">{{item.modulo}}</div>
+        <div class="col-sm-1">{{ item.tarifa }}</div>
+        <div class="col-sm-5"> {{ item.deportes | flatArrayPipe: 'nombre' }}</div>
+      </div>
+    </div>
+  </div>
+</div>
