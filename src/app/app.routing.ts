@@ -4,6 +4,7 @@ import { VfgDefaultComponent } from './vfg-common/vfg-default/vfg-default.compon
 import { CheckListComponent } from './develop/checklistexample/check-list-example.component';
 import { AgendaComponent } from './develop/agenda/agenda.component';
 import { FlatArrayPipeExampleComponent } from './develop/flat-array-pipe-example/flat-array-pipe-example.component';
+import { MapIterableExampleComponent } from './develop/map-iterable-example/map-iterable-example.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
 	{ path: 'home', component: VfgDefaultComponent },
 	{ path: 'checklist', component: CheckListComponent},
 	{ path: 'agenda', component: AgendaComponent},
-	{ path: 'flatarraypipe', component: FlatArrayPipeExampleComponent}
+	{ path: 'flatarraypipe', component: FlatArrayPipeExampleComponent},
+	{ path: 'mapiterablepipe', component: MapIterableExampleComponent}
 ];
 
 export const appRouting = RouterModule.forRoot(routes);

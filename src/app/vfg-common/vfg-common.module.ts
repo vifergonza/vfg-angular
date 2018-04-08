@@ -7,6 +7,8 @@ import { VfgHeaderComponent } from './vfg-header/vfg-header.component';
 import { VfgDefaultComponent } from './vfg-default/vfg-default.component';
 import { VfgCheckListComponent } from './vfg-check-list/vfg-check-list.component';
 import { FlatArrayPipe } from './pipes/flat-array.pipe';
+import { MapIterablePipe } from './pipes/map-iterable.pipe' ;
+
 
 @NgModule({
   imports: [
@@ -16,7 +18,7 @@ import { FlatArrayPipe } from './pipes/flat-array.pipe';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [VfgHeaderComponent, VfgDefaultComponent, VfgCheckListComponent, FlatArrayPipe],
-  exports: [ VfgHeaderComponent, VfgCheckListComponent, FlatArrayPipe]
+  declarations: [VfgHeaderComponent, VfgDefaultComponent, VfgCheckListComponent, FlatArrayPipe, MapIterablePipe],
+  exports: [ VfgHeaderComponent, VfgCheckListComponent, FlatArrayPipe, MapIterablePipe]
 })
 export class VfgCommonModule { }

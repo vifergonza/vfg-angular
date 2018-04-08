@@ -1,0 +1,17 @@
+<div class="container-fluid mt3">
+  <div class="alert alert-light" role="alert">
+    A continuación vemos el resultado de aplicar <strong>mapIterablePipe</strong> a un mapa. Para mostrar el campo value aplicamos flatArrayPipe para serializar el array.
+  </div>
+  <div class="row m-1 border rounded">
+    <div class="col-4 bg-light">
+      ngFor="let item of discos | mapIterablePipe"
+    </div>
+    <div class="col-8">
+    	<ul>
+    		<li *ngFor="let item of discos | mapIterablePipe">
+    			Key: {{ item.key }}, Value: {{item.value | flatArrayPipe:'titulo'}}.
+    		</li>
+    	</ul>
+    </div>
+  </div>
+</div>
