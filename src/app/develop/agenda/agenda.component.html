@@ -2,6 +2,21 @@
 
   <div class="row">
     <div class="col-sm-3 ">
+
+      <div class="card">
+        <h5 class="card-header">Filtro deportes</h5>
+        <div class="card-body">
+          <vfg-check-list [list]="deportes" label="nombre" (update)="filtrarDeportes($event)"></vfg-check-list>
+        </div>
+      </div>
+
+      <div class="card">
+        <h5 class="card-header">Filtro instalaciones</h5>
+        <div class="card-body">
+          <vfg-check-list [list]="instalaciones" label="nombre" (update)="filtrarInstalaciones($event)"></vfg-check-list>
+        </div>
+      </div>
+
       <div class="card">
         <h5 class="card-header">Reservas</h5>
         <div class="card-body">
@@ -19,8 +34,9 @@
         <span>Miercoles 5</span>
       </ng-template>
       <ng-template ngbPanelContent>
-        <div class="container-fluid m-0 p-0 border border-top-0 border-right-0 border-left-0" *ngFor="let item of reservas; let last=last" [ngClass]="{'border-bottom-0': last}">
-       <reserva [reserva]="item"></reserva>
+        <div class="container-fluid m-0 p-0 border border-top-0 border-right-0 border-left-0" *ngFor="let item of reservas; let last=last" 
+        [ngClass]="{'border-bottom-0': last || !item.visible}">
+       <reserva *ngIf="item.visible" [reserva]="item"></reserva>
      </div>
       </ng-template>
     </ngb-panel>

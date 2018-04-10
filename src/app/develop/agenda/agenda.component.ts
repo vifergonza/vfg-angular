@@ -9,8 +9,28 @@ export class AgendaComponent implements OnInit {
 
 public isCollapsed = true;
 
+private filtro = {
+	deportes: [],
+	instalaciones: []
+}
+
+private deportes = [
+	{ nombre: "Baloncesto", logo: "" },
+	{ nombre: "Padel", logo: "" },
+	{ nombre: "Tenis", logo: "" },
+	{ nombre: "Hockey", logo: "" },
+	{ nombre: "Natacion", logo: "" }
+];
+
+private instalaciones = [
+	{ nombre: "Polideportivo del Llano", logo: "" },
+	{ nombre: "La calzada", logo: "" },
+	{ nombre: "La arena", logo: "" }
+];
+
 private reservas = [
 	{ 
+		visible: true,
 		inicio: "10:00",
 		fin: "11:00",
 		estado: "Reservada", 
@@ -78,5 +98,50 @@ private reservas = [
   		this.reservas.pop();
   	}
   }
+
+  private filtrarDeportes(event: object) {
+  	console.log('filtrarDeportes', event);
+  	this.filtro.deportes = event as Array<any>;
+  	this.aplicarFiltro();
+  }
+
+  private aplicarFiltro() {
+  	this.reservas.forEach( item => {
+  		let deporteFound: boolean = false;
+  		if (this.filtro.deportes.length<1) {
+  			deporteFound = true;
+  		} else {
+			this.filtro.deportes.forEach( deporteFiltro => {
+				item.deportes.forEach(deporteReserva => {
+					if (deporteFiltro.nombre === deporteReserva.nombre) {
+						deporteFound = true;
+					}
+				});
+			});
+		}
+
+		// comprobar instalaciones
+		let instalacionFound: boolean = false;
+		if (this.filtro.instalaciones.length<1) {
+  			instalacionFound = true;
+  		} else {
+			this.filtro.instalaciones.forEach( instalacionFiltro => {
+				item.modulos.forEach(moduloReserva => {
+					if (moduloReserva.instalacion === instalacionFiltro.nombre) {
+						instalacionFound = true;
+					}
+				});
+			});
+		}
+		console.log(deporteFound, instalacionFound);
+		item.visible = deporteFound && instalacionFound;
+  	});
+  }
+
+  private filtrarInstalaciones(event: object) {
+  	console.log('filtrarInstalaciones', event);
+  	this.filtro.instalaciones = event as Array<any>;
+  	this.aplicarFiltro();
+  };
 
 }

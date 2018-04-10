@@ -23,10 +23,6 @@ export class CheckListComponent implements OnInit {
 		{ cod: 4, title:'Un dia nada más', anyo: 2016}
 	];
 
-	private label: string = "nombre";
-
-	private otralabel: string = "title";
-
 	private selectedUno: any;
 	private selectedDos: any;
 

@@ -4,14 +4,8 @@
       <p class="m-0"> {{ reserva.inicio }} - {{ reserva.fin }}</p>
     </div>
     <div class="col-sm-9 px-0">
-      <ul class="list-inline my-0">
-        <li class="list-inline-item">
-          <span class="badge badge-success ml-0">{{reserva.estado | uppercase}}</span>
-        </li>
-        <li class="list-inline-item" *ngFor="let item of reserva.deportes">
-          <span><i class="material-icons">bookmark_border</i> {{ item.nombre }}</span>
-        </li>
-      </ul>
+      <span class="badge badge-success ml-1">{{reserva.estado | uppercase}}</span>
+      <span class="badge badge-secondary ml-1"*ngFor="let item of reserva.deportes"> {{item.nombre | uppercase}} </span>
     </div>
     <div class="col-sm-1 px-0">
       <button type="button" class="btn btn-link btn-sm" 
