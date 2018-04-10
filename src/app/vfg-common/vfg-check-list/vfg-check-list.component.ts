@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, FormArray} from '@angular/forms';
+import { Component, OnInit, Output, Input, EventEmitter, SimpleChanges } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, FormArray, AbstractControl} from '@angular/forms';
 
 @Component({
   selector: 'vfg-check-list',
@@ -18,36 +18,50 @@ export class VfgCheckListComponent implements OnInit {
   private id: string;
   private checkForm: FormGroup;
 
-	constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { 
+    this.checkForm = new FormGroup({
+        checks: new FormArray([])
+    });
 
-  	ngOnInit() {
-      this.id = 'vfg-check-list_'.concat(String(VfgCheckListComponent.instanceCounter)).concat('_');
-      VfgCheckListComponent.instanceCounter++;
+    this.id = 'vfg-check-list_'.concat(String(VfgCheckListComponent.instanceCounter)).concat('_');
+    VfgCheckListComponent.instanceCounter++;
+    console.log('constructor', this.id);
+  }
 
-  		this.checkForm = this.formBuilder.group({
-  			checks: this.buildFormItems()
-  		});
-
-  		this.checkForm.valueChanges.subscribe( form => {
-
+    ngOnInit() {
+      this.checkForm.valueChanges.subscribe( form => {
         let temp = this.list.filter( function(currentValue, index, arr) {
           return form.checks[index];
         });
+        this.update.emit(temp);
+      });
+     
+    }
 
-  			this.update.emit(temp);
-  		});
-  	}
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes!.list!.currentValue !== undefined) {
+          if (changes.list.currentValue.length>0) {
+            this.checkForm.setControl('checks', this.buildFormItems());
+          } else {
+            this.checkForm.setControl('checks', new FormArray([]));
+          }
+        }
+    }
 
-  	private buildFormItems(): FormArray {
-  		const arr = this.list.map(item => {
-	      return this.formBuilder.control(false);
-    	});
-    	return this.formBuilder.array(arr);
-  	}
+    private buildFormItems(): FormArray {
+      const arr = this.list.map(item => {
+        return this.formBuilder.control(false);
+      });
+      return this.formBuilder.array(arr);  
+    }
 
-  	get checks(): FormArray {
-		  return this.checkForm.get('checks') as FormArray;
-  	};
+    get checksControls(): AbstractControl[] {
+      if (null!=this.checkForm) {
+        return (this.checkForm.get('checks') as FormArray).controls;
+      } else {
+        return [];
+      }
+    };
 
     private getPropertie(index): String {
       for (let [key, value] of Object.entries(this.list[index])) {  
