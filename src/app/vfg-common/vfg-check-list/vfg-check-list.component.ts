@@ -13,11 +13,17 @@ export class VfgCheckListComponent implements OnInit {
 
   @Output() update = new EventEmitter<any>();
 
+  private static instanceCounter: number = 0;
+
+  private id: string;
   private checkForm: FormGroup;
 
 	constructor(private formBuilder: FormBuilder) { }
 
   	ngOnInit() {
+      this.id = 'vfg-check-list_'.concat(String(VfgCheckListComponent.instanceCounter)).concat('_');
+      VfgCheckListComponent.instanceCounter++;
+
   		this.checkForm = this.formBuilder.group({
   			checks: this.buildFormItems()
   		});
