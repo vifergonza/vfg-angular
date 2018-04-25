@@ -8,6 +8,8 @@ import { AgendaComponent } from './agenda/agenda.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { FlatArrayPipeExampleComponent } from './flat-array-pipe-example/flat-array-pipe-example.component';
 import { MapIterableExampleComponent } from './map-iterable-example/map-iterable-example.component';
+import { DropDownListExampleComponent } from './drop-down-list-example/drop-down-list-example.component';
+import { ArrayListServiceExampleComponent } from './array-list-service-example/array-list-service-example.component';
 
 @NgModule({
   imports: [
@@ -17,7 +19,12 @@ import { MapIterableExampleComponent } from './map-iterable-example/map-iterable
     ReactiveFormsModule,
     VfgCommonModule
   ],
-  declarations: [CheckListComponent, AgendaComponent, ReservaComponent, FlatArrayPipeExampleComponent, MapIterableExampleComponent],
-  exports: [CheckListComponent, AgendaComponent, FlatArrayPipeExampleComponent, MapIterableExampleComponent]
+  declarations: [CheckListComponent, AgendaComponent, ReservaComponent, 
+  	FlatArrayPipeExampleComponent, MapIterableExampleComponent,
+  	DropDownListExampleComponent,
+  	ArrayListServiceExampleComponent],
+  exports: [CheckListComponent, AgendaComponent, FlatArrayPipeExampleComponent, 
+  	MapIterableExampleComponent, DropDownListExampleComponent,
+    ArrayListServiceExampleComponent]
 })
 export class DevelopModule { }
