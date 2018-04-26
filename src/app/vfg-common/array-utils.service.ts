@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 
+/**
+ * Servicio que ofrece diversas operaciones sobre arrays.
+ *
+ */
 @Injectable()
 export class ArrayUtilsService {
 

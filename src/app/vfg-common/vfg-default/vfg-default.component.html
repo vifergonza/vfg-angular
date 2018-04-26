@@ -1,7 +1,45 @@
 <div class="jumbotron">
   <h1 class="display-4">Hello, world!</h1>
   <p class="lead">Esta es un simple aplicación para desarrollar probar y experimentar con Angular, Bootstrap y todas las técnologias web con las que voy practicando.</p>
-  <hr class="my-4">
-  <p> <i class="material-icons">face</i> Algunos de los enlaces de la cabecera pueden estar vacíos, pero es una cabecera muy bonita.</p>
-	
+</div>
+<div class="container-fluid">
+  <div class="card-deck">
+    <div class="card">
+      <h5 class="card-header">vfg-check-list</h5>
+      <div class="card-body">
+        <h5 class="card-title">Lista de elementos seleccionables.</h5>
+        <p class="card-text">A partir de una lista de elementos de cualquier tipo se crea un formulario reactivo con tantos <em>checks</em> como elementos tenga dicha lista. Cada <em>check</em> esta acompañado de una etiqueta que se informa con el valor de la propiedad del objeto que se le indique.</p>
+        <a [routerLink]="'/checklist'" class="btn btn-primary">Check List</a>
+        <a [routerLink]="'/agenda'" class="btn btn-primary">Agenda</a>
+      </div>
+    </div>
+    <div class="card">
+      <h5 class="card-header">ArrayUtilsService</h5>
+      <div class="card-body">
+        <h5 class="card-title">Servicio que ofrece diversas operaciones sobre arrays.</h5>
+        <p class="card-text">Métodos para eliminar elementos y fusionar arrays.</p>
+        <a [routerLink]="'/arrayService'" class="btn btn-primary">Array utils</a>
+      </div>
+    </div>
+    <div class="card">
+      <h5 class="card-header">Pipes</h5>
+      <div class="card-body">
+        <h5 class="card-title">Transforma un objeto de entrada en otro.</h5>
+        <p class="card-text">Varias alternativas para transformar mapas en elementos iterables o para serializar lista de objetos.</p>
+        <a [routerLink]="'/mapiterablepipe'" class="btn btn-primary">Mapa iterable</a>
+        <a [routerLink]="'/flatarraypipe'" class="btn btn-primary">Serializar lista</a>
+      </div>
+    </div>
+  </div>
+  <div class="card-deck mt-2 mb-2">
+    <div class="card">
+      <h5 class="card-header">vfg-dropdown-list</h5>
+      <div class="card-body">
+        <h5 class="card-title">Lista desplegable.</h5>
+        <p class="card-text">El componente muestra de manera destacada el primer elemento de una lista. El resto de elementos permanecen ocultos hasta que se hace click en el elemento visible. Presionando de nuevo los elementos que no son el primero se vuelven a ocultar.</p>
+        <p class="card-text"><small class="text-muted">En este ejemplo se usa la coleccion <strong>Queue</strong>.</small></p>
+        <a [routerLink]="'/dropdownlist'" class="btn btn-primary">Drop down list</a>
+      </div>
+    </div>
+  </div>
 </div>

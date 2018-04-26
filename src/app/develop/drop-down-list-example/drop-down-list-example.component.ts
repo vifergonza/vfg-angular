@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Queue } from '../../vfg-common/util/collections/Queue';
+
 @Component({
   selector: 'app-drop-down-list-example',
   templateUrl: './drop-down-list-example.component.html',
@@ -7,15 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DropDownListExampleComponent implements OnInit {
 
-  private listaFija =[ 'Un elemento', 'Dos elementos', 'Tres elementos', 'Cuatro elementos'];
+  private listaFinita: Queue<string> = new Queue<string>(5);
+  private listaInfinita: Queue<string> = new Queue<string>();
 
   constructor() { }
 
   ngOnInit() {
 		setInterval( () => {
-			let item = this.listaFija.shift();
-			this.listaFija.push(item);
+			let date = new Date();
+      this.listaFinita.push(date.toString());
 		}, 2000);  	
+
+    setInterval( () => {
+      let date = new Date();
+      this.listaInfinita.push(date.toString());
+    }, 3000);    
   }
 
 }

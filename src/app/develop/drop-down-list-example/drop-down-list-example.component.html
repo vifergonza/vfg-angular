@@ -1,13 +1,21 @@
 <div class="container-fluid mt3">
   <div class="alert alert-light" role="alert">
-    A partir de una lista el componente muestra el primer elemento. Si hacemos click en el muestra el resto de elementos. He añadido un temporizador que va modificando los elementos de la lista que se pasa al componente.
+    A partir de una lista el componente muestra el primer elemento. Si hacemos click en el muestra el resto de elementos. He añadido un temporizador que va modificando los elementos de las listas que se pasan al componente.
   </div>
   <div class="row m-1 border rounded">
     <div class="col-4 bg-light">
-      <i class="material-icons">check</i> Haz click 
+      Lista limitada a 5 elementos.
     </div>
     <div class="col-8">
-		<vfg-dropdown-list [list]="listaFija"></vfg-dropdown-list>
+		<vfg-dropdown-list [list]="listaFinita.getStore()"></vfg-dropdown-list>
+    </div>
+  </div>
+  <div class="row m-1 border rounded">
+    <div class="col-4 bg-light">
+      Lista ilimitada.
+    </div>
+    <div class="col-8">
+    <vfg-dropdown-list [list]="listaInfinita.getStore()"></vfg-dropdown-list>
     </div>
   </div>
 </div>

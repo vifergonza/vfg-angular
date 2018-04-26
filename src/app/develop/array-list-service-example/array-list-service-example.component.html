@@ -1,4 +1,36 @@
-<p>
-  array-list-service-example works!
-</p>
-<pre> {{deportes | json}} </pre>
+<div class="container-fluid mt3">
+  <div class="alert alert-light" role="alert">
+    A continuación vemos el resultado de aplicar los métodos del servicio a varias listas.
+    El criterio para determinar que dos elementos sean iguales sera el campo <strong>nombre</strong>.
+  </div>
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Eliminar elemento.</h4>
+    <p class="mb-0">{{ deportes | json }}</p>
+  </div>
+  <div class="row m-1 border rounded">
+    <div class="col-4 bg-light">
+      <p>Eliminamos un elemento.</p>
+      <p>removeElement: {{ item | json }}</p>
+    </div>
+    <div class="col-8">
+      {{ remove | json}}
+    </div>
+  </div>
+
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Actualizamos listas.</h4>
+    <p class="mb-0"><strong>Deportes:</strong> {{ deportes | json }}</p>
+    <p class="mb-0"><strong>Deportes nuevos:</strong> {{ deportesNuevos | json }}</p>
+  </div>
+  <div class="row m-1 border rounded">
+    <div class="col-4 bg-light">
+    	<p>Actualizamos un array con los datos de otro.</p>
+        <p>updateElement:</p>
+    </div>
+    <div class="col-8">
+      <p><strong>Array original:</strong> {{ update | json}}</p>
+      <p><strong>Array con los datos nuevos:</strong> {{ copiaNuevos | json}}</p>
+    </div>
+  </div>
+
+</div>
