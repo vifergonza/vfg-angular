@@ -71,8 +71,8 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__("./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_routing__ = __webpack_require__("./src/app/app.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vfg_common_vfg_common_module__ = __webpack_require__("./src/app/vfg-common/vfg-common.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__develop_develop_module__ = __webpack_require__("./src/app/develop/develop.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__develop_develop_module__ = __webpack_require__("./src/app/develop/develop.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vfg_common_vfg_common_module__ = __webpack_require__("./src/app/vfg-common/vfg-common.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("./src/app/app.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -98,8 +98,8 @@ var AppModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_4__vfg_common_vfg_common_module__["a" /* VfgCommonModule */],
-                __WEBPACK_IMPORTED_MODULE_5__develop_develop_module__["a" /* DevelopModule */],
+                __WEBPACK_IMPORTED_MODULE_5__vfg_common_vfg_common_module__["a" /* VfgCommonModule */],
+                __WEBPACK_IMPORTED_MODULE_4__develop_develop_module__["a" /* DevelopModule */],
                 __WEBPACK_IMPORTED_MODULE_3__app_routing__["a" /* appRouting */]
             ],
             providers: [],
@@ -123,6 +123,12 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__develop_checklistexample_check_list_example_component__ = __webpack_require__("./src/app/develop/checklistexample/check-list-example.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__develop_agenda_agenda_component__ = __webpack_require__("./src/app/develop/agenda/agenda.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__develop_flat_array_pipe_example_flat_array_pipe_example_component__ = __webpack_require__("./src/app/develop/flat-array-pipe-example/flat-array-pipe-example.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__develop_map_iterable_example_map_iterable_example_component__ = __webpack_require__("./src/app/develop/map-iterable-example/map-iterable-example.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__develop_drop_down_list_example_drop_down_list_example_component__ = __webpack_require__("./src/app/develop/drop-down-list-example/drop-down-list-example.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__develop_array_list_service_example_array_list_service_example_component__ = __webpack_require__("./src/app/develop/array-list-service-example/array-list-service-example.component.ts");
+
+
+
 
 
 
@@ -133,7 +139,10 @@ var routes = [
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_1__vfg_common_vfg_default_vfg_default_component__["a" /* VfgDefaultComponent */] },
     { path: 'checklist', component: __WEBPACK_IMPORTED_MODULE_2__develop_checklistexample_check_list_example_component__["a" /* CheckListComponent */] },
     { path: 'agenda', component: __WEBPACK_IMPORTED_MODULE_3__develop_agenda_agenda_component__["a" /* AgendaComponent */] },
-    { path: 'flatarraypipe', component: __WEBPACK_IMPORTED_MODULE_4__develop_flat_array_pipe_example_flat_array_pipe_example_component__["a" /* FlatArrayPipeExampleComponent */] }
+    { path: 'flatarraypipe', component: __WEBPACK_IMPORTED_MODULE_4__develop_flat_array_pipe_example_flat_array_pipe_example_component__["a" /* FlatArrayPipeExampleComponent */] },
+    { path: 'mapiterablepipe', component: __WEBPACK_IMPORTED_MODULE_5__develop_map_iterable_example_map_iterable_example_component__["a" /* MapIterableExampleComponent */] },
+    { path: 'dropdownlist', component: __WEBPACK_IMPORTED_MODULE_6__develop_drop_down_list_example_drop_down_list_example_component__["a" /* DropDownListExampleComponent */] },
+    { path: 'arrayService', component: __WEBPACK_IMPORTED_MODULE_7__develop_array_list_service_example_array_list_service_example_component__["a" /* ArrayListServiceExampleComponent */] }
 ];
 var appRouting = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(routes);
 
@@ -150,7 +159,7 @@ module.exports = ""
 /***/ "./src/app/develop/agenda/agenda.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid p-md-3\">\n\n  <div class=\"row\">\n    <div class=\"col-sm-3 \">\n      <div class=\"card\">\n        <h5 class=\"card-header\">Reservas</h5>\n        <div class=\"card-body\">\n          <div class=\"btn-group-vertical\">\n           <button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"addReserva()\">Añadir</button>\n           <button type=\"button\" class=\"btn btn-primary btn-sm\"(click)=\"removeReserva()\">Quitar</button>\n          </div>\n        </div>\n      </div>\n    </div>\n\n  <ngb-accordion #acc=\"ngbAccordion\" activeIds=\"panel1\" class=\"col-sm-9\">\n    <ngb-panel id=\"panel1\">\n      <ng-template ngbPanelTitle>\n        <span>Miercoles 5</span>\n      </ng-template>\n      <ng-template ngbPanelContent>\n        <div class=\"container-fluid m-0 p-0 border border-top-0 border-right-0 border-left-0\" *ngFor=\"let item of reservas; let last=last\" [ngClass]=\"{'border-bottom-0': last}\">\n       <reserva [reserva]=\"item\"></reserva>\n     </div>\n      </ng-template>\n    </ngb-panel>\n  </ngb-accordion>\n</div>\n"
+module.exports = "<div class=\"container-fluid p-md-3\">\n\n  <div class=\"row\">\n    <div class=\"col-sm-3 \">\n\n      <div class=\"card\">\n        <h5 class=\"card-header\">Filtro deportes</h5>\n        <div class=\"card-body\">\n          <vfg-check-list [list]=\"deportes\" label=\"nombre\" (update)=\"filtrarDeportes($event)\"></vfg-check-list>\n        </div>\n      </div>\n\n      <div class=\"card\">\n        <h5 class=\"card-header\">Filtro instalaciones</h5>\n        <div class=\"card-body\">\n          <vfg-check-list [list]=\"instalaciones\" label=\"nombre\" (update)=\"filtrarInstalaciones($event)\"></vfg-check-list>\n        </div>\n      </div>\n\n      <div class=\"card\">\n        <h5 class=\"card-header\">Reservas</h5>\n        <div class=\"card-body\">\n          <div class=\"btn-group-vertical\">\n           <button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"addReserva()\">Añadir</button>\n           <button type=\"button\" class=\"btn btn-primary btn-sm\"(click)=\"removeReserva()\">Quitar</button>\n          </div>\n        </div>\n      </div>\n    </div>\n\n  <ngb-accordion #acc=\"ngbAccordion\" activeIds=\"panel1\" class=\"col-sm-9\">\n    <ngb-panel id=\"panel1\">\n      <ng-template ngbPanelTitle>\n        <span>Miercoles 5</span>\n      </ng-template>\n      <ng-template ngbPanelContent>\n        <div class=\"container-fluid m-0 p-0 border border-top-0 border-right-0 border-left-0\" *ngFor=\"let item of reservas; let last=last\" \n        [ngClass]=\"{'border-bottom-0': last || !item.visible}\">\n       <reserva *ngIf=\"item.visible\" [reserva]=\"item\"></reserva>\n     </div>\n      </ng-template>\n    </ngb-panel>\n  </ngb-accordion>\n</div>\n"
 
 /***/ }),
 
@@ -173,8 +182,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AgendaComponent = /** @class */ (function () {
     function AgendaComponent() {
         this.isCollapsed = true;
+        this.filtro = {
+            deportes: [],
+            instalaciones: []
+        };
+        this.deportes = [
+            { nombre: "Baloncesto", logo: "" },
+            { nombre: "Padel", logo: "" },
+            { nombre: "Tenis", logo: "" },
+            { nombre: "Hockey", logo: "" },
+            { nombre: "Natacion", logo: "" }
+        ];
+        this.instalaciones = [
+            { nombre: "Polideportivo del Llano", logo: "" },
+            { nombre: "La calzada", logo: "" },
+            { nombre: "La arena", logo: "" }
+        ];
         this.reservas = [
             {
+                visible: true,
                 inicio: "10:00",
                 fin: "11:00",
                 estado: "Reservada",
@@ -237,6 +263,51 @@ var AgendaComponent = /** @class */ (function () {
             this.reservas.pop();
         }
     };
+    AgendaComponent.prototype.filtrarDeportes = function (event) {
+        console.log('filtrarDeportes', event);
+        this.filtro.deportes = event;
+        this.aplicarFiltro();
+    };
+    AgendaComponent.prototype.aplicarFiltro = function () {
+        var _this = this;
+        this.reservas.forEach(function (item) {
+            var deporteFound = false;
+            if (_this.filtro.deportes.length < 1) {
+                deporteFound = true;
+            }
+            else {
+                _this.filtro.deportes.forEach(function (deporteFiltro) {
+                    item.deportes.forEach(function (deporteReserva) {
+                        if (deporteFiltro.nombre === deporteReserva.nombre) {
+                            deporteFound = true;
+                        }
+                    });
+                });
+            }
+            // comprobar instalaciones
+            var instalacionFound = false;
+            if (_this.filtro.instalaciones.length < 1) {
+                instalacionFound = true;
+            }
+            else {
+                _this.filtro.instalaciones.forEach(function (instalacionFiltro) {
+                    item.modulos.forEach(function (moduloReserva) {
+                        if (moduloReserva.instalacion === instalacionFiltro.nombre) {
+                            instalacionFound = true;
+                        }
+                    });
+                });
+            }
+            console.log(deporteFound, instalacionFound);
+            item.visible = deporteFound && instalacionFound;
+        });
+    };
+    AgendaComponent.prototype.filtrarInstalaciones = function (event) {
+        console.log('filtrarInstalaciones', event);
+        this.filtro.instalaciones = event;
+        this.aplicarFiltro();
+    };
+    ;
     AgendaComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'agenda',
@@ -252,10 +323,101 @@ var AgendaComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/develop/array-list-service-example/array-list-service-example.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/develop/array-list-service-example/array-list-service-example.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid mt3\">\n  <div class=\"alert alert-light\" role=\"alert\">\n    A continuación vemos el resultado de aplicar los métodos del servicio a varias listas.\n    El criterio para determinar que dos elementos sean iguales sera el campo <strong>nombre</strong>.\n  </div>\n  <div class=\"alert alert-success\" role=\"alert\">\n    <h4 class=\"alert-heading\">Eliminar elemento.</h4>\n    <p class=\"mb-0\">{{ deportes | json }}</p>\n  </div>\n  <div class=\"row m-1 border rounded\">\n    <div class=\"col-4 bg-light\">\n      <p>Eliminamos un elemento.</p>\n      <p>removeElement: {{ item | json }}</p>\n    </div>\n    <div class=\"col-8\">\n      {{ remove | json}}\n    </div>\n  </div>\n\n  <div class=\"alert alert-success\" role=\"alert\">\n    <h4 class=\"alert-heading\">Actualizamos listas.</h4>\n    <p class=\"mb-0\"><strong>Deportes:</strong> {{ deportes | json }}</p>\n    <p class=\"mb-0\"><strong>Deportes nuevos:</strong> {{ deportesNuevos | json }}</p>\n  </div>\n  <div class=\"row m-1 border rounded\">\n    <div class=\"col-4 bg-light\">\n    \t<p>Actualizamos un array con los datos de otro.</p>\n        <p>updateElement:</p>\n    </div>\n    <div class=\"col-8\">\n      <p><strong>Array original:</strong> {{ update | json}}</p>\n      <p><strong>Array con los datos nuevos:</strong> {{ copiaNuevos | json}}</p>\n    </div>\n  </div>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/develop/array-list-service-example/array-list-service-example.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArrayListServiceExampleComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vfg_common_array_utils_service__ = __webpack_require__("./src/app/vfg-common/array-utils.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ArrayListServiceExampleComponent = /** @class */ (function () {
+    function ArrayListServiceExampleComponent(arrayService) {
+        this.arrayService = arrayService;
+        this.deportes = [
+            { nombre: "Baloncesto", logo: "" },
+            { nombre: "Padel", logo: "" },
+            { nombre: "Polideportivo del Llano", logo: "" },
+            { nombre: "Tenis", logo: "" },
+            { nombre: "Hockey", logo: "" },
+            { nombre: "Natacion", logo: "" },
+            { nombre: "Polideportivo del Llano", logo: "" },
+            { nombre: "La calzada", logo: "" }
+        ];
+        this.deportesNuevos = [
+            { nombre: "Baloncesto", logo: "" },
+            { nombre: "Padel", logo: "" },
+            { nombre: "Tenis", logo: "" },
+            { nombre: "Natacion", logo: "" },
+            { nombre: "Golf", logo: "" },
+            { nombre: "Petanca", logo: "" }
+        ];
+        this.item = { nombre: "Polideportivo del Llano", logo: "" };
+    }
+    ArrayListServiceExampleComponent.prototype.ngOnInit = function () {
+    };
+    Object.defineProperty(ArrayListServiceExampleComponent.prototype, "remove", {
+        get: function () {
+            var copia = this.deportes.slice();
+            this.arrayService.removeElement(copia, this.item, function (x, y) { return x.nombre === y.nombre; });
+            return copia;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ArrayListServiceExampleComponent.prototype, "update", {
+        get: function () {
+            var copia = this.deportes.slice();
+            this.copiaNuevos = this.deportesNuevos.slice();
+            this.arrayService.updateArray(copia, this.copiaNuevos, function (x, y) { return x.nombre === y.nombre; });
+            return copia;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ArrayListServiceExampleComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-array-list-service-example',
+            template: __webpack_require__("./src/app/develop/array-list-service-example/array-list-service-example.component.html"),
+            styles: [__webpack_require__("./src/app/develop/array-list-service-example/array-list-service-example.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__vfg_common_array_utils_service__["a" /* ArrayUtilsService */]])
+    ], ArrayListServiceExampleComponent);
+    return ArrayListServiceExampleComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/develop/checklistexample/check-list-example.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid mt-3\">\n  <div class=\"alert alert-light\" role=\"alert\">\n    A continuación vemos el resultado de aplicar dos listas diferentes, con objetos con estructuras diferentes al componente <strong>vfg-check-list</strong>.\n  </div>\n  <div class=\"row\">\n    <div class=\"col-sm-6 \">\n      <div class=\"card\">\n        <h5 class=\"card-header\">Lista de grupos</h5>\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">Seleccione alguno de estos grupos / solistas:</h5>\n          <vfg-check-list [list]=\"grupos\" [label]=\"label\" (update)=\"updateUno($event)\"></vfg-check-list>\n          <blockquote class=\"blockquote mb-0\">\n            <footer class=\"blockquote-footer\">Grupos seleccionados:\n              <cite title=\"Source Title\">{{ selectedUno | json}}</cite>\n            </footer>\n          </blockquote>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-sm-6 \">\n      <div class=\"card\">\n        <h5 class=\"card-header\">Lista de discos</h5>\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">Seleccione alguno de estos discos:</h5>\n          <vfg-check-list [list]=\"discos\" [label]=\"otralabel\" (update)=\"updateDos($event)\"></vfg-check-list>\n          <blockquote class=\"blockquote mb-0\">\n            <footer class=\"blockquote-footer\">Discos seleccionados:\n              <cite title=\"Source Title\">{{ selectedDos | json}}</cite>\n            </footer>\n          </blockquote>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container-fluid mt-3\">\n  <div class=\"alert alert-light\" role=\"alert\">\n    A continuación vemos el resultado de aplicar dos listas diferentes, con objetos con estructuras diferentes al componente <strong>vfg-check-list</strong>.\n  </div>\n  <div class=\"row\">\n    <div class=\"col-sm-6 \">\n      <div class=\"card\">\n        <h5 class=\"card-header\">Lista de grupos</h5>\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">Seleccione alguno de estos grupos / solistas:</h5>\n          <vfg-check-list [list]=\"grupos\" label=\"nombre\" (update)=\"updateUno($event)\"></vfg-check-list>\n          <blockquote class=\"blockquote mb-0\">\n            <footer class=\"blockquote-footer\">Grupos seleccionados:\n              <cite title=\"Source Title\">{{ selectedUno | json}}</cite>\n            </footer>\n          </blockquote>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-sm-6 \">\n      <div class=\"card\">\n        <h5 class=\"card-header\">Lista de discos</h5>\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">Seleccione alguno de estos discos:</h5>\n          <vfg-check-list [list]=\"discos\" label=\"title\" (update)=\"updateDos($event)\"></vfg-check-list>\n          <blockquote class=\"blockquote mb-0\">\n            <footer class=\"blockquote-footer\">Discos seleccionados:\n              <cite title=\"Source Title\">{{ selectedDos | json}}</cite>\n            </footer>\n          </blockquote>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -290,8 +452,6 @@ var CheckListComponent = /** @class */ (function () {
             { cod: 3, title: 'Para bien o para mal', anyo: 1994 },
             { cod: 4, title: 'Un dia nada más', anyo: 2016 }
         ];
-        this.label = "nombre";
-        this.otralabel = "title";
     }
     CheckListComponent.prototype.ngOnInit = function () {
     };
@@ -330,12 +490,18 @@ var CheckListComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__agenda_agenda_component__ = __webpack_require__("./src/app/develop/agenda/agenda.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reserva_reserva_component__ = __webpack_require__("./src/app/develop/reserva/reserva.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__flat_array_pipe_example_flat_array_pipe_example_component__ = __webpack_require__("./src/app/develop/flat-array-pipe-example/flat-array-pipe-example.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__map_iterable_example_map_iterable_example_component__ = __webpack_require__("./src/app/develop/map-iterable-example/map-iterable-example.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__drop_down_list_example_drop_down_list_example_component__ = __webpack_require__("./src/app/develop/drop-down-list-example/drop-down-list-example.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__array_list_service_example_array_list_service_example_component__ = __webpack_require__("./src/app/develop/array-list-service-example/array-list-service-example.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -353,15 +519,83 @@ var DevelopModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
                 __WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_4__vfg_common_vfg_common_module__["a" /* VfgCommonModule */]
             ],
-            declarations: [__WEBPACK_IMPORTED_MODULE_5__checklistexample_check_list_example_component__["a" /* CheckListComponent */], __WEBPACK_IMPORTED_MODULE_6__agenda_agenda_component__["a" /* AgendaComponent */], __WEBPACK_IMPORTED_MODULE_7__reserva_reserva_component__["a" /* ReservaComponent */], __WEBPACK_IMPORTED_MODULE_8__flat_array_pipe_example_flat_array_pipe_example_component__["a" /* FlatArrayPipeExampleComponent */]],
-            exports: [__WEBPACK_IMPORTED_MODULE_5__checklistexample_check_list_example_component__["a" /* CheckListComponent */], __WEBPACK_IMPORTED_MODULE_6__agenda_agenda_component__["a" /* AgendaComponent */], __WEBPACK_IMPORTED_MODULE_8__flat_array_pipe_example_flat_array_pipe_example_component__["a" /* FlatArrayPipeExampleComponent */]]
+            declarations: [__WEBPACK_IMPORTED_MODULE_5__checklistexample_check_list_example_component__["a" /* CheckListComponent */], __WEBPACK_IMPORTED_MODULE_6__agenda_agenda_component__["a" /* AgendaComponent */], __WEBPACK_IMPORTED_MODULE_7__reserva_reserva_component__["a" /* ReservaComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__flat_array_pipe_example_flat_array_pipe_example_component__["a" /* FlatArrayPipeExampleComponent */], __WEBPACK_IMPORTED_MODULE_9__map_iterable_example_map_iterable_example_component__["a" /* MapIterableExampleComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__drop_down_list_example_drop_down_list_example_component__["a" /* DropDownListExampleComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__array_list_service_example_array_list_service_example_component__["a" /* ArrayListServiceExampleComponent */]],
+            exports: [__WEBPACK_IMPORTED_MODULE_5__checklistexample_check_list_example_component__["a" /* CheckListComponent */], __WEBPACK_IMPORTED_MODULE_6__agenda_agenda_component__["a" /* AgendaComponent */], __WEBPACK_IMPORTED_MODULE_8__flat_array_pipe_example_flat_array_pipe_example_component__["a" /* FlatArrayPipeExampleComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__map_iterable_example_map_iterable_example_component__["a" /* MapIterableExampleComponent */], __WEBPACK_IMPORTED_MODULE_10__drop_down_list_example_drop_down_list_example_component__["a" /* DropDownListExampleComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__array_list_service_example_array_list_service_example_component__["a" /* ArrayListServiceExampleComponent */]]
         })
     ], DevelopModule);
     return DevelopModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/develop/drop-down-list-example/drop-down-list-example.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/develop/drop-down-list-example/drop-down-list-example.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid mt3\">\r\n  <div class=\"alert alert-light\" role=\"alert\">\r\n    A partir de una lista el componente muestra el primer elemento. Si hacemos click en el muestra el resto de elementos. He añadido un temporizador que va modificando los elementos de las listas que se pasan al componente.\r\n  </div>\r\n  <div class=\"row m-1 border rounded\">\r\n    <div class=\"col-4 bg-light\">\r\n      Lista limitada a 5 elementos.\r\n    </div>\r\n    <div class=\"col-8\">\r\n\t\t<vfg-dropdown-list [list]=\"listaFinita.getStore()\"></vfg-dropdown-list>\r\n    </div>\r\n  </div>\r\n  <div class=\"row m-1 border rounded\">\r\n    <div class=\"col-4 bg-light\">\r\n      Lista ilimitada.\r\n    </div>\r\n    <div class=\"col-8\">\r\n    <vfg-dropdown-list [list]=\"listaInfinita.getStore()\"></vfg-dropdown-list>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/develop/drop-down-list-example/drop-down-list-example.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropDownListExampleComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vfg_common_util_collections_Queue__ = __webpack_require__("./src/app/vfg-common/util/collections/Queue.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DropDownListExampleComponent = /** @class */ (function () {
+    function DropDownListExampleComponent() {
+        this.listaFinita = new __WEBPACK_IMPORTED_MODULE_1__vfg_common_util_collections_Queue__["a" /* Queue */](5);
+        this.listaInfinita = new __WEBPACK_IMPORTED_MODULE_1__vfg_common_util_collections_Queue__["a" /* Queue */]();
+    }
+    DropDownListExampleComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        setInterval(function () {
+            var date = new Date();
+            _this.listaFinita.push(date.toString());
+        }, 2000);
+        setInterval(function () {
+            var date = new Date();
+            _this.listaInfinita.push(date.toString());
+        }, 3000);
+    };
+    DropDownListExampleComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-drop-down-list-example',
+            template: __webpack_require__("./src/app/develop/drop-down-list-example/drop-down-list-example.component.html"),
+            styles: [__webpack_require__("./src/app/develop/drop-down-list-example/drop-down-list-example.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], DropDownListExampleComponent);
+    return DropDownListExampleComponent;
 }());
 
 
@@ -434,6 +668,72 @@ var FlatArrayPipeExampleComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/develop/map-iterable-example/map-iterable-example.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/develop/map-iterable-example/map-iterable-example.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid mt3\">\r\n  <div class=\"alert alert-light\" role=\"alert\">\r\n    A continuación vemos el resultado de aplicar <strong>mapIterablePipe</strong> a un mapa. Para mostrar el campo value aplicamos flatArrayPipe para serializar el array.\r\n  </div>\r\n  <div class=\"row m-1 border rounded\">\r\n    <div class=\"col-4 bg-light\">\r\n      ngFor=\"let item of discos | mapIterablePipe\"\r\n    </div>\r\n    <div class=\"col-8\">\r\n    \t<ul>\r\n    \t\t<li *ngFor=\"let item of discos | mapIterablePipe\">\r\n    \t\t\tKey: {{ item.key }}, Value: {{item.value | flatArrayPipe:'titulo'}}.\r\n    \t\t</li>\r\n    \t</ul>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/develop/map-iterable-example/map-iterable-example.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapIterableExampleComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MapIterableExampleComponent = /** @class */ (function () {
+    function MapIterableExampleComponent() {
+        this.discos = new Map();
+        this.label = "{{ discos | mapIterablePipe | flatArrayPipe:'titulo' }}";
+    }
+    MapIterableExampleComponent.prototype.ngOnInit = function () {
+        var discosBurning = [
+            { titulo: 'Madrid', discografica: 'Ocre-Belter', anyo: '1978' },
+            { titulo: 'El fin de la década', discografica: 'Ocre-Belter', anyo: '1979' },
+            { titulo: 'Bulevar', discografica: 'Ocre-Belter', anyo: '1980' },
+            { titulo: 'Noches de Rock & Roll', discografica: 'Belter', anyo: '1984' }
+        ];
+        this.discos.set('Burning', discosBurning);
+        var discosDesakato = [
+            { titulo: 'Con el viento de cara', anyo: '2008' },
+            { titulo: 'Miseria, sangre y plomo', anyo: '2010' },
+            { titulo: 'Insercia', anyo: '2012' },
+            { titulo: 'Buen viaje', anyo: '2014' }
+        ];
+        this.discos.set('Desakato', discosDesakato);
+    };
+    MapIterableExampleComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-map-iterable-example',
+            template: __webpack_require__("./src/app/develop/map-iterable-example/map-iterable-example.component.html"),
+            styles: [__webpack_require__("./src/app/develop/map-iterable-example/map-iterable-example.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MapIterableExampleComponent);
+    return MapIterableExampleComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/develop/reserva/reserva.component.css":
 /***/ (function(module, exports) {
 
@@ -444,7 +744,7 @@ module.exports = ".bg-modulo:hover {\r\n\tbackground-color: #f8f9fa !important;\
 /***/ "./src/app/develop/reserva/reserva.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid mt-1\">\n  <div class=\"row\">\n    <div class=\"col-sm-2 px-0 \">\n      <p class=\"m-0\"> {{ reserva.inicio }} - {{ reserva.fin }}</p>\n    </div>\n    <div class=\"col-sm-9 px-0\">\n      <ul class=\"list-inline my-0\">\n        <li class=\"list-inline-item\">\n          <span class=\"badge badge-success ml-0\">{{reserva.estado | uppercase}}</span>\n        </li>\n        <li class=\"list-inline-item\" *ngFor=\"let item of reserva.deportes\">\n          <span><i class=\"material-icons\">bookmark_border</i> {{ item.nombre }}</span>\n        </li>\n      </ul>\n    </div>\n    <div class=\"col-sm-1 px-0\">\n      <button type=\"button\" class=\"btn btn-link btn-sm\" \n      (click)=\"instalacionesCollapsed = !instalacionesCollapsed\" [attr.aria-expanded]=\"!instalacionesCollapsed\" \n      data-toggle=\"tooltip\" data-placement=\"top\"\n      title=\"{{instalacionesCollapsed ? 'Ver módulos' : 'Ocultar módulos'}}\"\n      aria-controls=\"collapseExample\">\n        <i class=\"material-icons\"> {{ instalacionesCollapsed ? 'visibility' : 'visibility_off'  }} </i>\n      </button>\n    </div>\n  </div>\n  <div class=\"row mb-3\" id=\"collapseExample\" [ngbCollapse]=\"instalacionesCollapsed\">\n    <div class=\"col-sm-10 offset-sm-2\">\n      <div class=\"row border bg-modulo\" *ngFor=\"let item of reserva.modulos; let last=last\" \n      [ngClass]=\"{'border-bottom-0': (!last)}\" >\n        <div class=\"col-sm-4\">\n         {{ item.instalacion}} </div>  \n        <div class=\"col-sm-2\" ngbPopover=\"{{item.descripcion}}\" popoverTitle=\"{{item.modulo}}\" triggers=\"mouseenter:mouseleave\" placement=\"top\">{{item.modulo}}</div>\n        <div class=\"col-sm-1\">{{ item.tarifa }}</div>\n        <div class=\"col-sm-5\"> {{ item.deportes | flatArrayPipe: 'nombre' }}</div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container-fluid mt-1\">\n  <div class=\"row\">\n    <div class=\"col-sm-2 px-0 \">\n      <p class=\"m-0\"> {{ reserva.inicio }} - {{ reserva.fin }}</p>\n    </div>\n    <div class=\"col-sm-9 px-0\">\n      <span class=\"badge badge-success ml-1\">{{reserva.estado | uppercase}}</span>\n      <span class=\"badge badge-secondary ml-1\"*ngFor=\"let item of reserva.deportes\"> {{item.nombre | uppercase}} </span>\n    </div>\n    <div class=\"col-sm-1 px-0\">\n      <button type=\"button\" class=\"btn btn-link btn-sm\" \n      (click)=\"instalacionesCollapsed = !instalacionesCollapsed\" [attr.aria-expanded]=\"!instalacionesCollapsed\" \n      data-toggle=\"tooltip\" data-placement=\"top\"\n      title=\"{{instalacionesCollapsed ? 'Ver módulos' : 'Ocultar módulos'}}\"\n      aria-controls=\"collapseExample\">\n        <i class=\"material-icons\"> {{ instalacionesCollapsed ? 'visibility' : 'visibility_off'  }} </i>\n      </button>\n    </div>\n  </div>\n  <div class=\"row mb-3\" id=\"collapseExample\" [ngbCollapse]=\"instalacionesCollapsed\">\n    <div class=\"col-sm-10 offset-sm-2\">\n      <div class=\"row border bg-modulo\" *ngFor=\"let item of reserva.modulos; let last=last\" \n      [ngClass]=\"{'border-bottom-0': (!last)}\" >\n        <div class=\"col-sm-4\">\n         {{ item.instalacion}} </div>  \n        <div class=\"col-sm-2\" ngbPopover=\"{{item.descripcion}}\" popoverTitle=\"{{item.modulo}}\" triggers=\"mouseenter:mouseleave\" placement=\"top\">{{item.modulo}}</div>\n        <div class=\"col-sm-1\">{{ item.tarifa }}</div>\n        <div class=\"col-sm-5\"> {{ item.deportes | flatArrayPipe: 'nombre' }}</div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -483,6 +783,93 @@ var ReservaComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], ReservaComponent);
     return ReservaComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/vfg-common/array-utils.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArrayUtilsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+/**
+ * Servicio que ofrece diversas operaciones sobre arrays.
+ *
+ */
+var ArrayUtilsService = /** @class */ (function () {
+    function ArrayUtilsService() {
+    }
+    /**
+     * Crea un nuevo array con los siguientes elementos:
+     *  - elementos que esten en arrayX y en arrayY.
+     *  - elementos que esten en arrayY y no esten en arrayX.
+     */
+    ArrayUtilsService.prototype.getUpdateArray = function (arrayX, arrayY, areEquals) {
+        var resultArray = arrayX.slice();
+        this.updateArray(resultArray, arrayY.slice(), areEquals);
+        return resultArray;
+    };
+    /**
+     * Elimina todas las ocurrencias de theItem en el array usando areEquals para
+     * determinar si dos elementos son iguales.
+     */
+    ArrayUtilsService.prototype.removeElement = function (theArray, theItem, areEquals) {
+        var i = 0;
+        while (i < theArray.length) {
+            var found = areEquals(theItem, theArray[i]);
+            if (found) {
+                theArray.splice(i, 1);
+            }
+            else {
+                i++;
+            }
+        }
+    };
+    /**
+     * Actualiza los elementos del orginalArray con los de newArray:
+     *  - añade los elementos que esten en newArray y no esten en originalArray.
+     *  - elimina los elementos que esten en el originalArray y no esten en newArray.
+     * Al final de la ejecucion, newArray tendrá los elementos añadidos al originalArray.
+     */
+    ArrayUtilsService.prototype.updateArray = function (originalArray, newArray, areEquals) {
+        var indexOriginal = 0;
+        while (indexOriginal < originalArray.length) {
+            var itemOriginal = newArray.find(function (itemNew) {
+                return areEquals(originalArray[indexOriginal], itemNew);
+            });
+            if (itemOriginal) {
+                // Esta en el nuevo y en el original. Lo elimino de nuevo y avanzo en cursor.
+                this.removeElement(newArray, itemOriginal, areEquals);
+                indexOriginal++;
+            }
+            else {
+                // esta en el original, pero no en el nuevo, lo elimino del original
+                originalArray.splice(indexOriginal, 1);
+            }
+        }
+        // Si en este punto quedan elementos en el nuevo, los añado al original
+        newArray.forEach(function (x) {
+            originalArray.push(x);
+        });
+    };
+    ArrayUtilsService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], ArrayUtilsService);
+    return ArrayUtilsService;
 }());
 
 
@@ -550,6 +937,101 @@ var FlatArrayPipe = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/vfg-common/pipes/map-iterable.pipe.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapIterablePipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var MapIterablePipe = /** @class */ (function () {
+    function MapIterablePipe() {
+    }
+    MapIterablePipe.prototype.transform = function (iterable, args) {
+        var result = [];
+        iterable.forEach(function (entryVal, entryKey) {
+            result.push({
+                key: entryKey,
+                value: entryVal
+            });
+        });
+        console.log('iterablePipe', iterable, args, result);
+        return result;
+    };
+    MapIterablePipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Pipe */])({
+            name: 'mapIterablePipe'
+        })
+    ], MapIterablePipe);
+    return MapIterablePipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/vfg-common/util/collections/Queue.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Queue; });
+/**
+ * Implementacion de una cola FIFO (inserta al final extrae al principio)
+ * con una capacidad limitada de elementos.
+ */
+var Queue = /** @class */ (function () {
+    /**
+     * Inicializa la cola, permite especificar un tamaño máximo.
+     */
+    function Queue(theCapacity) {
+        this.store = new Array();
+        if (theCapacity != null) {
+            this.capacity = theCapacity;
+        }
+        else {
+            this.capacity = null;
+        }
+    }
+    /**
+     * Añade un elemento al final de la lista. Si alcanzamos el tamaño máximo
+     * elimina el elemento mas antiguo de la colleción.
+     */
+    Queue.prototype.push = function (theObject) {
+        if (null != this.capacity && this.capacity == this.store.length) {
+            this.store.pop();
+        }
+        this.store.unshift(theObject);
+    };
+    /**
+     * Retorna y extrae el ultimo elemento de la coleccion
+     */
+    Queue.prototype.pop = function () {
+        if (0 < this.store.length) {
+            return this.store.pop();
+        }
+        else {
+            return null;
+        }
+    };
+    /**
+     * Retorna la lista de elementos.
+     */
+    Queue.prototype.getStore = function () {
+        return this.store;
+    };
+    return Queue;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/vfg-common/vfg-check-list/vfg-check-list.component.css":
 /***/ (function(module, exports) {
 
@@ -560,7 +1042,7 @@ module.exports = ""
 /***/ "./src/app/vfg-common/vfg-check-list/vfg-check-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"checkForm\">\n  <div class=\"form-group\">\n    <div class=\"custom-control custom-checkbox\" *ngFor=\"let item of checks.controls; let i=index\">\n      <input type=\"checkbox\" class=\"custom-control-input\" id=\"{{label+i}}\" [formControl]=\"item\">\n      <label class=\"custom-control-label\" for=\"{{label+i}}\"> {{getPropertie(i)}} </label>\n    </div>\n  </div>\n</form>\n"
+module.exports = "<form [formGroup]=\"checkForm\">\n  <div class=\"form-group\">\n    <div class=\"custom-control custom-checkbox\" *ngFor=\"let item of checksControls; let i=index\">\n      <input type=\"checkbox\" class=\"custom-control-input\" id=\"{{id.concat(i)}}\" [formControl]=\"item\">\n      <label class=\"custom-control-label\" for=\"{{id.concat(i)}}\"> {{getPropertie(i)}} </label>\n    </div>\n  </div>\n</form>\n"
 
 /***/ }),
 
@@ -586,18 +1068,32 @@ var VfgCheckListComponent = /** @class */ (function () {
     function VfgCheckListComponent(formBuilder) {
         this.formBuilder = formBuilder;
         this.update = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.checkForm = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormGroup */]({
+            checks: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormArray */]([])
+        });
+        this.id = 'vfg-check-list_'.concat(String(VfgCheckListComponent_1.instanceCounter)).concat('_');
+        VfgCheckListComponent_1.instanceCounter++;
+        console.log('constructor', this.id);
     }
+    VfgCheckListComponent_1 = VfgCheckListComponent;
     VfgCheckListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.checkForm = this.formBuilder.group({
-            checks: this.buildFormItems()
-        });
         this.checkForm.valueChanges.subscribe(function (form) {
             var temp = _this.list.filter(function (currentValue, index, arr) {
                 return form.checks[index];
             });
             _this.update.emit(temp);
         });
+    };
+    VfgCheckListComponent.prototype.ngOnChanges = function (changes) {
+        if (changes.list.currentValue !== undefined) {
+            if (changes.list.currentValue.length > 0) {
+                this.checkForm.setControl('checks', this.buildFormItems());
+            }
+            else {
+                this.checkForm.setControl('checks', new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormArray */]([]));
+            }
+        }
     };
     VfgCheckListComponent.prototype.buildFormItems = function () {
         var _this = this;
@@ -606,9 +1102,14 @@ var VfgCheckListComponent = /** @class */ (function () {
         });
         return this.formBuilder.array(arr);
     };
-    Object.defineProperty(VfgCheckListComponent.prototype, "checks", {
+    Object.defineProperty(VfgCheckListComponent.prototype, "checksControls", {
         get: function () {
-            return this.checkForm.get('checks');
+            if (null != this.checkForm) {
+                return this.checkForm.get('checks').controls;
+            }
+            else {
+                return [];
+            }
         },
         enumerable: true,
         configurable: true
@@ -623,6 +1124,7 @@ var VfgCheckListComponent = /** @class */ (function () {
         }
         return "Not found";
     };
+    VfgCheckListComponent.instanceCounter = 0;
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
         __metadata("design:type", Array)
@@ -635,15 +1137,16 @@ var VfgCheckListComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
         __metadata("design:type", Object)
     ], VfgCheckListComponent.prototype, "update", void 0);
-    VfgCheckListComponent = __decorate([
+    VfgCheckListComponent = VfgCheckListComponent_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'vfg-check-list',
             template: __webpack_require__("./src/app/vfg-common/vfg-check-list/vfg-check-list.component.html"),
             styles: [__webpack_require__("./src/app/vfg-common/vfg-check-list/vfg-check-list.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */]])
     ], VfgCheckListComponent);
     return VfgCheckListComponent;
+    var VfgCheckListComponent_1;
 }());
 
 
@@ -664,12 +1167,18 @@ var VfgCheckListComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__vfg_default_vfg_default_component__ = __webpack_require__("./src/app/vfg-common/vfg-default/vfg-default.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__vfg_check_list_vfg_check_list_component__ = __webpack_require__("./src/app/vfg-common/vfg-check-list/vfg-check-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pipes_flat_array_pipe__ = __webpack_require__("./src/app/vfg-common/pipes/flat-array.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pipes_map_iterable_pipe__ = __webpack_require__("./src/app/vfg-common/pipes/map-iterable.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__vfg_dropdown_list_vfg_dropdown_list_component__ = __webpack_require__("./src/app/vfg-common/vfg-dropdown-list/vfg-dropdown-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__array_utils_service__ = __webpack_require__("./src/app/vfg-common/array-utils.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -688,11 +1197,23 @@ var VfgCommonModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */],
                 __WEBPACK_IMPORTED_MODULE_3__app_routing__["a" /* appRouting */],
                 __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["e" /* ReactiveFormsModule */]
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["d" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["g" /* ReactiveFormsModule */]
             ],
-            declarations: [__WEBPACK_IMPORTED_MODULE_5__vfg_header_vfg_header_component__["a" /* VfgHeaderComponent */], __WEBPACK_IMPORTED_MODULE_6__vfg_default_vfg_default_component__["a" /* VfgDefaultComponent */], __WEBPACK_IMPORTED_MODULE_7__vfg_check_list_vfg_check_list_component__["a" /* VfgCheckListComponent */], __WEBPACK_IMPORTED_MODULE_8__pipes_flat_array_pipe__["a" /* FlatArrayPipe */]],
-            exports: [__WEBPACK_IMPORTED_MODULE_5__vfg_header_vfg_header_component__["a" /* VfgHeaderComponent */], __WEBPACK_IMPORTED_MODULE_7__vfg_check_list_vfg_check_list_component__["a" /* VfgCheckListComponent */], __WEBPACK_IMPORTED_MODULE_8__pipes_flat_array_pipe__["a" /* FlatArrayPipe */]]
+            declarations: [__WEBPACK_IMPORTED_MODULE_5__vfg_header_vfg_header_component__["a" /* VfgHeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_6__vfg_default_vfg_default_component__["a" /* VfgDefaultComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__vfg_check_list_vfg_check_list_component__["a" /* VfgCheckListComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__pipes_flat_array_pipe__["a" /* FlatArrayPipe */],
+                __WEBPACK_IMPORTED_MODULE_9__pipes_map_iterable_pipe__["a" /* MapIterablePipe */],
+                __WEBPACK_IMPORTED_MODULE_10__vfg_dropdown_list_vfg_dropdown_list_component__["a" /* VfgDropdownListComponent */]
+            ],
+            exports: [__WEBPACK_IMPORTED_MODULE_5__vfg_header_vfg_header_component__["a" /* VfgHeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__vfg_check_list_vfg_check_list_component__["a" /* VfgCheckListComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__pipes_flat_array_pipe__["a" /* FlatArrayPipe */],
+                __WEBPACK_IMPORTED_MODULE_9__pipes_map_iterable_pipe__["a" /* MapIterablePipe */],
+                __WEBPACK_IMPORTED_MODULE_10__vfg_dropdown_list_vfg_dropdown_list_component__["a" /* VfgDropdownListComponent */]
+            ],
+            providers: [__WEBPACK_IMPORTED_MODULE_11__array_utils_service__["a" /* ArrayUtilsService */]]
         })
     ], VfgCommonModule);
     return VfgCommonModule;
@@ -712,7 +1233,7 @@ module.exports = ""
 /***/ "./src/app/vfg-common/vfg-default/vfg-default.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron\">\n  <h1 class=\"display-4\">Hello, world!</h1>\n  <p class=\"lead\">Esta es un simple aplicación para desarrollar probar y experimentar con Angular, Bootstrap y todas las técnologias web con las que voy practicando.</p>\n  <hr class=\"my-4\">\n  <p> <i class=\"material-icons\">face</i> Algunos de los enlaces de la cabecera pueden estar vacíos, pero es una cabecera muy bonita.</p>\n\t\n</div>"
+module.exports = "<div class=\"jumbotron\">\n  <h1 class=\"display-4\">Hello, world!</h1>\n  <p class=\"lead\">Esta es un simple aplicación para desarrollar probar y experimentar con Angular, Bootstrap y todas las técnologias web con las que voy practicando.</p>\n</div>\n<div class=\"container-fluid\">\n  <div class=\"card-deck\">\n    <div class=\"card\">\n      <h5 class=\"card-header\">vfg-check-list</h5>\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">Lista de elementos seleccionables.</h5>\n        <p class=\"card-text\">A partir de una lista de elementos de cualquier tipo se crea un formulario reactivo con tantos <em>checks</em> como elementos tenga dicha lista. Cada <em>check</em> esta acompañado de una etiqueta que se informa con el valor de la propiedad del objeto que se le indique.</p>\n        <a [routerLink]=\"'/checklist'\" class=\"btn btn-primary\">Check List</a>\n        <a [routerLink]=\"'/agenda'\" class=\"btn btn-primary\">Agenda</a>\n      </div>\n    </div>\n    <div class=\"card\">\n      <h5 class=\"card-header\">ArrayUtilsService</h5>\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">Servicio que ofrece diversas operaciones sobre arrays.</h5>\n        <p class=\"card-text\">Métodos para eliminar elementos y fusionar arrays.</p>\n        <a [routerLink]=\"'/arrayService'\" class=\"btn btn-primary\">Array utils</a>\n      </div>\n    </div>\n    <div class=\"card\">\n      <h5 class=\"card-header\">Pipes</h5>\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">Transforma un objeto de entrada en otro.</h5>\n        <p class=\"card-text\">Varias alternativas para transformar mapas en elementos iterables o para serializar lista de objetos.</p>\n        <a [routerLink]=\"'/mapiterablepipe'\" class=\"btn btn-primary\">Mapa iterable</a>\n        <a [routerLink]=\"'/flatarraypipe'\" class=\"btn btn-primary\">Serializar lista</a>\n      </div>\n    </div>\n  </div>\n  <div class=\"card-deck mt-2 mb-2\">\n    <div class=\"card\">\n      <h5 class=\"card-header\">vfg-dropdown-list</h5>\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">Lista desplegable.</h5>\n        <p class=\"card-text\">El componente muestra de manera destacada el primer elemento de una lista. El resto de elementos permanecen ocultos hasta que se hace click en el elemento visible. Presionando de nuevo los elementos que no son el primero se vuelven a ocultar.</p>\n        <p class=\"card-text\"><small class=\"text-muted\">En este ejemplo se usa la coleccion <strong>Queue</strong>.</small></p>\n        <a [routerLink]=\"'/dropdownlist'\" class=\"btn btn-primary\">Drop down list</a>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -752,17 +1273,72 @@ var VfgDefaultComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/vfg-common/vfg-dropdown-list/vfg-dropdown-list.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".bg-clickable:hover {\r\n\tcursor: pointer;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/vfg-common/vfg-dropdown-list/vfg-dropdown-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row bg-clickable\" (click)=\"isCollapsed = !isCollapsed\">\n    <div class=\"col-sm-12 \">\n      <strong> {{list[0]}} </strong> \n    </div>\n  </div>\n  <div class=\"row\" id=\"collapseExample\" *ngIf=\"!isCollapsed\">\n    <div class=\"col-sm-12 \" *ngFor=\"let item of list; let first=first\">\n      <span *ngIf=\"!first\"> {{item}} </span>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/vfg-common/vfg-dropdown-list/vfg-dropdown-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VfgDropdownListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var VfgDropdownListComponent = /** @class */ (function () {
+    function VfgDropdownListComponent() {
+        this.isCollapsed = true;
+    }
+    VfgDropdownListComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Array)
+    ], VfgDropdownListComponent.prototype, "list", void 0);
+    VfgDropdownListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'vfg-dropdown-list',
+            template: __webpack_require__("./src/app/vfg-common/vfg-dropdown-list/vfg-dropdown-list.component.html"),
+            styles: [__webpack_require__("./src/app/vfg-common/vfg-dropdown-list/vfg-dropdown-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], VfgDropdownListComponent);
+    return VfgDropdownListComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/vfg-common/vfg-header/vfg-header.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".fa:hover {\r\n    opacity: 0.7;\r\n}\r\n\r\n.fa-google {\r\n  background: #dd4b39;\r\n  color: white;\r\n}\r\n\r\n.fa-linkedin {\r\n  background: #007bb5;\r\n  color: white;\r\n}\r\n\r\n.vfg {\r\n  padding: 8px 10px 8px 10px;\r\n  margin-right: 5px;\r\n}\r\n\r\n.fa-twitter {\r\n  background: #55ACEE;\r\n  color: white;\r\n}"
 
 /***/ }),
 
 /***/ "./src/app/vfg-common/vfg-header/vfg-header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n<nav class=\"navbar navbar-expand-lg  navbar-dark bg-danger\">\n  <a class=\"navbar-brand\" [routerLink]=\"'home'\" [routerLinkActive]=\"['active']\">\n  \t\t<img src=\"/assets/angular-vfg.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\" />\n  \t\tVfgAngular\n  </a>\n  <button class=\"navbar-toggler\" type=\"button\" \n  \tdata-toggle=\"collapse\" \n  \tdata-target=\"#navbarSupportedContent\" \n  \taria-controls=\"navbarSupportedContent\" \n  \t(click)=\"isCollapsed = !isCollapsed\" \n  \t[attr.aria-expanded]=\"!isCollapsed\"\n  \taria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\" [ngbCollapse]=\"isCollapsed\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"'checklist'\" [routerLinkActive]=\"['active']\">Check List</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"'agenda'\" [routerLinkActive]=\"['active']\">Agenda</a>\n      </li>\n\n      <li ngbDropdown class=\"nav-item dropdown\">\n\n      \t<a class=\"nav-link\" id=\"navbarDropdown\" ngbDropdownToggle aria-haspopup=\"true\" aria-expanded=\"false\">Mas</a>\n\n        <div ngbDropdownMenu class=\"dropdown-menu \" aria-labelledby=\"navbarDropdown\">\n          <a class=\"dropdown-item\" [routerLink]=\"'flatarraypipe'\" [routerLinkActive]=\"['active']\">FlatArrayPipe</a>\n          <a class=\"dropdown-item\" href=\"#\">Action 1</a>\n          <a class=\"dropdown-item\" href=\"#\">Action 2</a>\n        </div>\n\n      </li>\n\n    </ul>\n  </div>\n</nav>\n\n</header>"
+module.exports = "<header>\r\n<nav class=\"navbar navbar-expand-lg  navbar-dark bg-danger\">\r\n  <a class=\"navbar-brand\" [routerLink]=\"'home'\" [routerLinkActive]=\"['active']\">\r\n  \t\t<img src=\"/assets/angular-vfg.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\" />\r\n  \t\tVfgAngular\r\n  </a>\r\n  <button class=\"navbar-toggler\" type=\"button\" \r\n  \tdata-toggle=\"collapse\" \r\n  \tdata-target=\"#navbarSupportedContent\" \r\n  \taria-controls=\"navbarSupportedContent\" \r\n  \t(click)=\"isCollapsed = !isCollapsed\" \r\n  \t[attr.aria-expanded]=\"!isCollapsed\"\r\n  \taria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" [routerLink]=\"'checklist'\" [routerLinkActive]=\"['active']\">Check List</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" [routerLink]=\"'agenda'\" [routerLinkActive]=\"['active']\">Agenda</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" [routerLink]=\"'arrayService'\" [routerLinkActive]=\"['active']\">Array Utils</a>\r\n      </li>\r\n      \r\n      <li ngbDropdown class=\"nav-item dropdown\">\r\n\r\n      \t<a class=\"nav-link\" id=\"navbarDropdown\" ngbDropdownToggle aria-haspopup=\"true\" aria-expanded=\"false\">Mas</a>\r\n\r\n        <div ngbDropdownMenu class=\"dropdown-menu \" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"'flatarraypipe'\" [routerLinkActive]=\"['active']\">FlatArrayPipe</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"'mapiterablepipe'\" [routerLinkActive]=\"['active']\">MapIterablePipe</a>\r\n          <div class=\"dropdown-divider\"></div>\r\n          <a class=\"dropdown-item\" [routerLink]=\"'dropdownlist'\" [routerLinkActive]=\"['active']\">DropDownList</a>\r\n        </div>\r\n\r\n      </li>\r\n\r\n    </ul>\r\n  \r\n\r\n<div class=\"navbar-text\">\r\n<a target=\"_blank\" href=\"https://www.linkedin.com/in/vifergo/\" class=\"vfg fa fa-linkedin border border-light rounded\"></a>\r\n    <a target=\"_blank\" href=\"https://twitter.com/vifergo?ref_src=twsrc%5Etfw\" class=\"vfg fa fa-twitter border border-light rounded\">\r\n      </a>\r\n</div>\r\n</div>\r\n\r\n</nav>\r\n\r\n</header>"
 
 /***/ }),
 
