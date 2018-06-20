@@ -10,6 +10,7 @@ import { FlatArrayPipe } from './pipes/flat-array.pipe';
 import { MapIterablePipe } from './pipes/map-iterable.pipe' ;
 import { VfgDropdownListComponent } from './vfg-dropdown-list/vfg-dropdown-list.component';
 import { ArrayUtilsService } from './array-utils.service';
+import { VfgDropFileComponent } from './vfg-drop-file/vfg-drop-file.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ArrayUtilsService } from './array-utils.service';
   	VfgCheckListComponent,
   	FlatArrayPipe,
   	MapIterablePipe,
-  	VfgDropdownListComponent
+  	VfgDropdownListComponent,
+  	VfgDropFileComponent
   ],
   exports: [ VfgHeaderComponent, 
   	VfgCheckListComponent, 

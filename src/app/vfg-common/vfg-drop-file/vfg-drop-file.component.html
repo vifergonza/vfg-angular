@@ -1,0 +1,30 @@
+<form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+
+  <fieldset>
+  <legend>HTML File Upload</legend>
+  
+  <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+  
+  <div>
+    <div id="filedrag" (dragover)="fileDragHover($event)" (dragleave)="fileDragHover($event)"
+    (drop)="fileSelectHandler($event)">
+    <p>or drop files here</p>
+  
+    <label for="fileselect">Files to upload:</label>
+    <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+  
+  
+  </div>
+  </div>
+  
+  <div id="submitbutton">
+    <button type="submit">Upload Files</button>
+  </div>
+  
+  </fieldset>
+  
+  </form>
+  
+  <div id="messages">
+  <p>Status Messages</p>
+</div>
